@@ -37,6 +37,12 @@ class TodoList extends React.Component {
         }
     }
 
+    cleanTaskList() {
+        this.setState({
+            taskList: []
+        });
+    }
+
     render() {
         const taskList = this.state.taskList;
 
@@ -55,13 +61,17 @@ class TodoList extends React.Component {
                 <div className="row">
                     <div className="col-lg-8 offset-lg-2">
                         <div className="row">
-                            <div className="col-lg-9">
+                            <div className="col-lg-8">
                                 <label className="primary">Tarefa</label>
                                 <input type="text" onChange={this.handleChange.bind(this)} value={this.state.task} className="form-control" />
                             </div>
-                            <div className="col-lg-3">
+                            <div className="col-lg-2">
                                 <hr className="invisible" />
                                 <button type="button" onClick={() => this.handleClick()} className="btn btn-info">Adicionar</button>
+                            </div>
+                            <div className="col-lg-2">
+                                <hr className="invisible" />
+                                <button type="button" onClick={() => this.cleanTaskList()} className="btn btn-warning">Limpar</button>
                             </div>
                         </div>
                         <hr className="invisible" />
