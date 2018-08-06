@@ -5,19 +5,19 @@ class MathFunctions {
         this.number2 = number2;
     }
 
-    Sum() {
+    sum() {
         return this.number1 + this.number2;
     }
 
-    Subtraction() {
+    subtraction() {
         return this.number1 - this.number2;
     }
 
-    Division() {
+    division() {
         return this.number1 / this.number2;
     }
 
-    Multiplication() {
+    multiplication() {
         return this.number1 * this.number2;
     }
 
