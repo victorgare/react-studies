@@ -27,7 +27,7 @@ class TodoList extends React.Component {
         const task = this.state.task;
         const taskList = this.state.taskList.slice();
 
-        if (task !== "") {
+        if (task.trim() !== "") {
             taskList.push(task);
 
             this.setState({
@@ -43,6 +43,15 @@ class TodoList extends React.Component {
         });
     }
 
+    removeTask(index) {
+        let taskList = this.state.taskList.slice();
+
+        taskList.splice(index, 1);
+
+        this.setState({
+            taskList: taskList
+        });
+    }
     render() {
         const taskList = this.state.taskList;
 
@@ -50,7 +59,7 @@ class TodoList extends React.Component {
 
             return (
                 <li key={step + task}>
-                    {step}
+                    {step} - <a href="#" onClick={() => this.removeTask(task)} className="text-danger">X</a>
                 </li>
             );
         });
